@@ -1,34 +1,8 @@
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-      <p>Add new Servers or blueprints!</p>
-      <label for="name" class="form-label">Server Name</label>
-      <input type="text" id="name" class="form-control mb-3" [(ngModel)]="newServerName" />
-      <label for="content" class="form-label">Server Content</label>
-      <input type="text" id="content" class="form-control" [(ngModel)]="newServerContent" />
-      <br />
-      <button class="btn btn-primary me-1" (click)="onAddServer()">
-        Add Server
-      </button>
-      <button class="btn btn-primary ms-1" (click)="onAddBlueprint()">
-        Add Server Blueprint
-      </button>
-    </div>
-  </div>
+  <app-cockpit></app-cockpit>
   <hr />
   <div class="row">
-    <div class="col-12">
-      <div class="card my-2" *ngFor="let element of serverElements">
-        <div class="card-header">{{ element.name }}</div>
-        <div class="card-body">
-          <p>
-            <strong *ngIf="element.type === 'server'" style="color: red">{{
-              element.content
-            }}</strong>
-            <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
-          </p>
-        </div>
-      </div>
-    </div>
+    <div class="col-12"></div>
+    <app-server-element *ngFor="let serverElement of serverElements"></app-server-element>
   </div>
 </div>
