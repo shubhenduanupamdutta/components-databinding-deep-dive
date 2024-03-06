@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './server-element.component.css',
 })
 export class ServerElementComponent {
-  serverElements = [];
+  element: {
+    type: string;
+    name: string;
+    content: string;
+  };
 }
